@@ -1,0 +1,74 @@
+input {
+    width: 400px;
+}
+
+.input-plugin {
+    margin-bottom: 20px;
+}
+
+.input-plugin label {
+    display: block;
+}
+
+.corh-label {
+    display: inline-block!important;
+}
+
+.input-chain-hotel-radio {
+    display: flex;
+    align-items: flex-end;
+}
+
+.input-chain-hotel-radio input {
+    margin-right: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-chain-holder, .input-hotel-holder {
+    flex-direction: column;
+}
+
+.input-hotel-holder {
+    display: none;
+}
+
+.missing-id, .missing-token {
+    display: none;
+}
+
+.missing-id p {
+    margin-top: 0px;
+}
+
+.obpress-welcome {
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+
+.obpress-select-currency, .obpress-select-language, .obpress-select-calendar-adults, .obpress-select-list-hotel {
+    margin-bottom: 20px;
+}
+
+.obpress-select-currency h3, .obpress-select-language h3, .obpress-select-calendar-adults h3, .obpress-select-list-hotel .list-hotel-folder {
+    margin-bottom: 5px;
+}
+
+.obpress-list-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-hotel-holder { 
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;    
+}
+
+.obpress-apply-holder {
+    margin-bottom: 200px;
+}
