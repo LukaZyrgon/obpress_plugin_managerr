@@ -55,6 +55,22 @@ function load_obpress_manager_admin_script() {
   add_action('admin_enqueue_scripts', 'enqueue_obpress_manager_admin_script' );
 }
 
+//Activator
+function activate_obpress() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/obpress-activator.php';
+	OBPress_Activator::activate();
+}
+
+//Deactivator
+function deactivate_obpress() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/obpress-deactivator.php';
+	OBPress_Deactivator::deactivate();
+}
+
+//Register Activator and Deactivator
+register_activation_hook( __FILE__, 'activate_obpress' );
+register_deactivation_hook( __FILE__, 'deactivate_obpress' );
+
 require_once(WP_PLUGIN_DIR . '/OBPressPluginManager/admin/adminAjax.php');
 
 //Set the branch that contains the stable release.
