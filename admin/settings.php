@@ -23,12 +23,19 @@ require_once(dirname(__FILE__) . '/settingsController.php');
     </select>
 </div>
 
-<div class="obpress-select-calendar-adults">
-    <h3>Select number of adults for calendar prices</h3>
-    <select class="calendar-adults-select" data-adults-selected="<?= get_option('calendar_adults') ?>">
-        <option value="1">1</option>
-        <option value="2">2</option>
-    </select>
+<div class="obpress-calendar-options">
+    <h3>Calendar Options</h3>
+    <div class="obpress-select-calendar-adults">
+        <label for="">Select Number of Adults for Calendar</label>
+        <select class="calendar-adults-select" data-adults-selected="<?= get_option('calendar_adults') ?>">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+    </div>
+    <div class="obpress-calendar-allow-unavail">
+        <label for="">Allow selecting unavailable dates in calendar</label>
+        <input type="checkbox" id="obpress-calendar-allow-checkbox">
+    </div>
 </div>
 
 <?php if(empty(get_option('hotel_id'))) : ?>
