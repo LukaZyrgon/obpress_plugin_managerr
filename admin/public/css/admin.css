@@ -50,11 +50,11 @@ input::-webkit-inner-spin-button {
     margin-top: 40px;
 }
 
-.obpress-select-currency, .obpress-select-language, .obpress-select-calendar-adults, .obpress-select-list-hotel {
+.obpress-select-currency, .obpress-select-language, .obpress-select-calendar-adults, .obpress-select-list-hotel, .obpress-select-max-rooms {
     margin-bottom: 20px;
 }
 
-.obpress-select-currency h3, .obpress-select-language h3, .obpress-select-calendar-adults h3, .obpress-select-list-hotel .list-hotel-folder {
+.obpress-select-currency h3, .obpress-select-language h3, .obpress-select-calendar-adults h3, .obpress-select-list-hotel .list-hotel-folder, .obpress-select-max-rooms h3 {
     margin-bottom: 5px;
 }
 
@@ -71,4 +71,8 @@ input::-webkit-inner-spin-button {
 
 .obpress-apply-holder {
     margin-bottom: 200px;
+}
+
+.obpress-hotel-select {
+    margin-right: 30px;
 }

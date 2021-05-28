@@ -12,3 +12,4 @@ foreach($hotelFolders as $hotelFolder) {
         array_push($hotelFromFolder, $hotelFolder);
     }
 }
+

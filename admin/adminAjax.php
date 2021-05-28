@@ -8,6 +8,7 @@ function admin_apply_changes() {
     $selectedLang = $_POST['selectedLang'];
     $calendarAdults = $_POST['calendarAdults'];
     $removedHotels = $_POST['removedHotels'];
+    $changedMaxRooms = $_POST['changedMaxRooms'];
 
     $langArray = [
         8 => "pt_BR",
@@ -28,8 +29,38 @@ function admin_apply_changes() {
     update_option('default_language', $selectedLangLocale);
     update_option('calendar_adults', $calendarAdults);
     update_option('removed_hotels', $removedHotels);
+    if(!empty($changedMaxRooms)) {
+        update_option('changed_max_rooms', $changedMaxRooms);
+    }
 
-    echo json_encode(get_option('removed_hotels'));
+    echo json_encode(get_option('changed_max_rooms'));
 
     die();
+}
+
+add_action('wp_ajax_get_hotel_max_rooms', 'get_hotel_max_rooms');
+add_action('wp_ajax_nopriv_get_hotel_max_rooms', 'get_hotel_max_rooms');
+
+function get_hotel_max_rooms() {
+    $property = json_decode($_POST['hotelId'], true);
+    $currency = get_option('default_currency_id');
+    $style =  BeApi::getPropertyStyle($property, $currency);
+
+    $roomLimits = array('defaultMaxRooms' => $style->Result->MaxRooms);;
+
+    if(!empty(get_option('changed_max_rooms'))) {
+        $maxRoomsArr = get_option('changed_max_rooms');
+
+        foreach($maxRoomsArr as $room) {
+            if($property == $room['hotelId']) {
+                $roomLimits['selectedMaxRooms'] = $room['newMaxRooms'];
+            }
+        }
+
+    }
+
+
+    echo json_encode($roomLimits);
+
+    die();    
 }

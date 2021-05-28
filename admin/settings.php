@@ -1,5 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/settingsController.php');
+
 ?>
 
 <h1 class="obpress-welcome">Welcome!</h1>
@@ -43,6 +44,26 @@ require_once(dirname(__FILE__) . '/settingsController.php');
         </div>
     </div>
 <?php endif; ?>
+
+<div class="obpress-select-max-rooms">
+    <h3>Select maximum number of rooms</h3>
+    <div class="obpress-select-max-rooms-holder">
+        <span class="obpress-hotel-select">
+            <label for="">Hotel:</label>
+            <select name="" id="obpress-hotel-options">
+            <?php foreach($hotelFromFolder as $hotel) : ?>
+                <option class='obpress-room-option' value="<?= $hotel->Property_UID ?>"><?= $hotel->Property_Name ?></option>
+            <?php endforeach; ?>
+            </select>
+        </span>
+        <span class="obpress-room-select">
+            <label for="">Max Rooms</label>
+            <select name="" id="obpress-room-options">
+                    <!-- Options are generated through javascript, check line 80 in admin.js -->
+            </select>
+        </span>
+    </div>
+</div>
 
 <div class="obpress-apply-holder">
     <button class="obpress-apply">Apply Changes</button>

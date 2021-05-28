@@ -34,6 +34,9 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
   'obpress_plugin_manager'
 );
 
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
 //Functions that load and register admin css scripts
 function enqueue_obpress_manager_admin_style() {
   wp_enqueue_style( 'admin_css', plugin_dir_url( __FILE__ ) . 'admin/public/css/admin.css');
@@ -71,7 +74,5 @@ function deactivate_obpress() {
 register_activation_hook( __FILE__, 'activate_obpress' );
 register_deactivation_hook( __FILE__, 'deactivate_obpress' );
 
+//register ajax calls
 require_once(WP_PLUGIN_DIR . '/OBPressPluginManager/admin/adminAjax.php');
-
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
