@@ -4,7 +4,7 @@
   Plugin uri: www.zyrgon.net
   Text Domain: OBPress_Plugin_Manager
   Description: Plugin used to connect to the BEAPI and edit different settings for the Elementor extension
-  Version: 0.0.1
+  Version: 0.0.2
   Author: Zyrgon
   Author uri: www.zyrgon.net
   License: GPlv2 or Later
