@@ -27,7 +27,7 @@ function obpress_plugin_manager() {
   include_once ('admin/index.php');
 }
 
-require_once(WP_PLUGIN_DIR . '/OBPressPluginManager/plugin-update-checker-4.11/plugin-update-checker.php');
+require_once(WP_PLUGIN_DIR . '/obpress_plugin_manager/plugin-update-checker-4.11/plugin-update-checker.php');
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
   'https://github.com/MilosZyrgon/OBPress_SearchBarPlugin',
   __FILE__,
@@ -75,4 +75,4 @@ register_activation_hook( __FILE__, 'activate_obpress' );
 register_deactivation_hook( __FILE__, 'deactivate_obpress' );
 
 //register ajax calls
-require_once(WP_PLUGIN_DIR . '/OBPressPluginManager/admin/adminAjax.php');
+require_once(WP_PLUGIN_DIR . '/obpress_plugin_manager/admin/adminAjax.php');

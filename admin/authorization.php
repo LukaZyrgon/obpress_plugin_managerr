@@ -1,6 +1,6 @@
 <?php
 
-require_once(WP_PLUGIN_DIR . '/OBPressPluginManager/BeApi/BeApi.php');
+require_once(WP_PLUGIN_DIR . '/obpress_plugin_manager/BeApi/BeApi.php');
 
 
 if(isset($_POST['input-plugin-token']) && (isset($_POST['input-plugin-chain-id']) || isset($_POST['input-plugin-hotel-id']))) {
