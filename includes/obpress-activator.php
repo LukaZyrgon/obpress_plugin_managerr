@@ -11,6 +11,8 @@ class OBPress_Activator {
         add_option('default_language', null);
         add_option('calendar_adults', 1);
         add_option('removed_hotels', null);
+        add_option('changed_max_rooms', null);
+        add_option('allow_unavail_dates', false);
 
         flush_rewrite_rules();
     }

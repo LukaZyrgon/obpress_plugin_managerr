@@ -11,6 +11,8 @@ class OBPress_Deactivator {
         delete_option('default_language');
         delete_option('calendar_adults');
         delete_option('removed_hotels');
+        delete_option('changed_max_rooms');
+        delete_option('allow_unavail_dates');
 
         flush_rewrite_rules();
     }

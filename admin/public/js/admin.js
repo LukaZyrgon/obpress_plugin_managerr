@@ -77,6 +77,9 @@ jQuery(document).ready(function () {
     .find("option[value=" + calendarAdultsSelected + "]")
     .prop("selected", "selected");
 
+  var calendarUnavailDates = jQuery("#obpress-calendar-allow-checkbox").prop('checked');
+
+
   //Javascript for limiting max rooms
   var data = {};
   var action = "get_hotel_max_rooms";
@@ -191,6 +194,11 @@ jQuery(document).ready(function () {
 
     var changedMaxRooms = [];
 
+    var allowUnavailDates = false;
+    if(jQuery('#obpress-calendar-allow-checkbox').is(":checked")) {
+      allowUnavailDates = true;
+    }
+
     for (i = 0; i < jQuery(".list-hotel-checkbox").length; i++) {
       if (jQuery(".list-hotel-checkbox").eq(i).prop("checked") == false) {
         removedHotels.push(
@@ -221,6 +229,7 @@ jQuery(document).ready(function () {
     data.calendarAdults = calendarAdults;
     data.removedHotels = JSON.stringify(removedHotels);
     data.changedMaxRooms = changedMaxRooms;
+    data.allowUnavailDates = allowUnavailDates;
 
     data.action = action;
 

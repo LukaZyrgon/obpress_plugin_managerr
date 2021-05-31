@@ -3,12 +3,14 @@
 add_action('wp_ajax_admin_apply_changes', 'admin_apply_changes');
 add_action('wp_ajax_nopriv_admin_apply_changes', 'admin_apply_changes');
 
+
 function admin_apply_changes() {
     $selectedCurrency = $_POST['selectedCurrency'];
     $selectedLang = $_POST['selectedLang'];
     $calendarAdults = $_POST['calendarAdults'];
     $removedHotels = $_POST['removedHotels'];
     $changedMaxRooms = $_POST['changedMaxRooms'];
+    $allowUnavailDates = $_POST['allowUnavailDates'];
 
     $langArray = [
         8 => "pt_BR",
@@ -29,6 +31,8 @@ function admin_apply_changes() {
     update_option('default_language', $selectedLangLocale);
     update_option('calendar_adults', $calendarAdults);
     update_option('removed_hotels', $removedHotels);
+    update_option('allow_unavail_dates', $allowUnavailDates);
+
     if(!empty($changedMaxRooms)) {
         update_option('changed_max_rooms', $changedMaxRooms);
     }
